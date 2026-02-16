@@ -129,5 +129,3 @@ def process_game_result(user_id, amount):
 
 from database.db import get_top_users
 
-top_users = get_top_users(10)  # örnek: en iyi 5 kullanıcı
-print(top_users)
