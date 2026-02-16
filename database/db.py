@@ -46,20 +46,6 @@ def update_balance(user_id, amount):
     conn.commit()
 
 
-# GÜNLÜK
-def get_last_claim(user_id):
-    get_user(user_id)
-    cursor.execute("SELECT last_claim FROM users WHERE user_id=?", (user_id,))
-    return cursor.fetchone()[0]
-
-
-def update_last_claim(user_id):
-    cursor.execute(
-        "UPDATE users SET last_claim=? WHERE user_id=?",
-        (int(time.time()), user_id)
-    )
-    conn.commit()
-
 
 # 📊 İSTATİSTİK
 def add_win(user_id, amount):
