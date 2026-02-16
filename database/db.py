@@ -91,41 +91,5 @@ def get_stats(user_id):
     return cursor.fetchone()
 
 
-# 🏆 SIRALAMA
-def get_user_rank(user_id):
-    cursor.execute("""
-        SELECT COUNT(*) + 1 FROM users
-        WHERE balance > (SELECT balance FROM users WHERE user_id=?)
-    """, (user_id,))
-    return cursor.fetchone()[0]
 
-def process_game_result(user_id, amount):
-    get_user(user_id)
-
-    # Bakiye güncelle
-    cursor.execute(
-        "UPDATE users SET balance = balance + ? WHERE user_id=?",
-        (amount, user_id)
-    )
-
-    if amount > 0:
-        cursor.execute("""
-            UPDATE users
-            SET total_won = total_won + ?,
-                total_games = total_games + 1
-            WHERE user_id=?
-        """, (amount, user_id))
-
-    elif amount < 0:
-        cursor.execute("""
-            UPDATE users
-            SET total_lost = total_lost + ?,
-                total_games = total_games + 1
-            WHERE user_id=?
-        """, (-amount, user_id))
-
-    conn.commit()
-
-
-from database.db import get_top_users
 
