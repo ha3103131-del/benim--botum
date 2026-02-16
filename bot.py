@@ -16,12 +16,6 @@ from games.risk import risk
 from games.blackjack import bj, bj_callback
 from games.admin import banka, ceza, borc
 
-# bot.py
-def show_top_users():
-    from database.db import get_top_users  # fonksiyon içinde import
-    top = get_top_users()
-    print(top)
-
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
 
