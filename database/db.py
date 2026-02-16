@@ -125,3 +125,9 @@ def process_game_result(user_id, amount):
         """, (-amount, user_id))
 
     conn.commit()
+
+
+from database.db import get_top_users
+
+top_users = get_top_users(10)  # örnek: en iyi 5 kullanıcı
+print(top_users)
