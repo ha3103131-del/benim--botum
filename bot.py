@@ -7,6 +7,7 @@ from games.double import double
 from games.atyarisi import atyarisi
 from games.yazitura import yazitura
 from games.daily import gunluk
+from games.runk import runk
 from config import TOKEN
 from games.misteri import misteri
 from games.istatistik import istatistik
