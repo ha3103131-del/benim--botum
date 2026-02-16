@@ -5,7 +5,6 @@ from games.slot import slot
 from games.zar import zar
 from games.double import double
 from games.atyarisi import atyarisi
-from games.top import top
 from games.yazitura import yazitura
 from games.daily import gunluk
 from config import TOKEN
