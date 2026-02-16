@@ -27,7 +27,6 @@ def main():
     app.add_handler(CommandHandler("double", double))
     app.add_handler(CommandHandler("slot", slot))
     app.add_handler(CommandHandler("zar", zar))
-    app.add_handler(CommandHandler("top", top))
     app.add_handler(CommandHandler("misteri", misteri))
     app.add_handler(CommandHandler("yazitura", yazitura))
     app.add_handler(CommandHandler("bj", bj))
